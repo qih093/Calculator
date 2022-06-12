@@ -73,9 +73,25 @@ function performCalculation() {
     renderHistory();
 }
 
-//calculate persentage
+//calculate persentage masih belum selesai
 function persentage() {
-    calculator.displayNumber = calculator.displayNumber / 100;
+    if (calculator.firstNumber == null || calculator.operator == null) {
+        alert("Anda belum menetapkan operator");
+        return;
+    }
+
+    let result = 0;
+    result = parseInt(calculator.firstNumber) * parseInt(calculator.displayNumber) / 100;
+    
+    const history = {
+        firstNumber: calculator.firstNumber,
+        secondNumber: calculator.displayNumber,
+        operator: "%",
+        result: result
+    }
+    putHistory(history);
+    calculator.displayNumber = result;
+    renderHistory();
 }
 
 const buttons = document.querySelectorAll(".button");
@@ -99,6 +115,7 @@ for (let button of buttons) {
 
         if (target.classList.contains('equals')) {
             performCalculation();
+            persentage();
             updateDisplay();
             return;
         }
