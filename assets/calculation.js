@@ -60,6 +60,11 @@ function performCalculation() {
         result = parseInt(calculator.firstNumber) * parseInt(calculator.displayNumber);
     } else if (calculator.operator === "/") {
         result = parseInt(calculator.firstNumber) / parseInt(calculator.displayNumber);
+    }else if(calculator.operator === "%") {
+        result = parseInt(calculator.firstNumber) * parseInt(calculator.displayNumber) / 100;
+    }else{
+        alert("Operator tidak dikenali");
+        return;
     }
     // objek yang akan dikirimkan sebagai argumen fungsi putHistory()
     const history = {
@@ -73,26 +78,26 @@ function performCalculation() {
     renderHistory();
 }
 
-//calculate persentage masih belum selesai
-function persentage() {
-    if (calculator.firstNumber == null || calculator.operator == null) {
-        alert("Anda belum menetapkan operator");
-        return;
-    }
+// //calculate persentage masih belum selesai
+// function persentage() {
+//     if (calculator.firstNumber == null || calculator.operator == null) {
+//         alert("Anda belum menetapkan operator");
+//         return;
+//     }
 
-    let result = 0;
-    result = parseInt(calculator.firstNumber) * parseInt(calculator.displayNumber) / 100;
+//     let result = 0;
+//     result = parseInt(calculator.firstNumber) * parseInt(calculator.displayNumber) / 100;
     
-    const history = {
-        firstNumber: calculator.firstNumber,
-        secondNumber: calculator.displayNumber,
-        operator: "%",
-        result: result
-    }
-    putHistory(history);
-    calculator.displayNumber = result;
-    renderHistory();
-}
+//     const history = {
+//         firstNumber: calculator.firstNumber,
+//         secondNumber: calculator.displayNumber,
+//         operator: "%",
+//         result: result
+//     }
+//     putHistory(history);
+//     calculator.displayNumber = result;
+//     renderHistory();
+// }
 
 const buttons = document.querySelectorAll(".button");
 for (let button of buttons) {
@@ -114,10 +119,10 @@ for (let button of buttons) {
         }
 
         if (target.classList.contains('equals')) {
-            if(calculator.operator === "%"){
-                persentage();
-                updateDisplay();
-            }
+            // if(calculator.operator === "%"){
+            //     persentage();
+            //     updateDisplay();
+            // }
             performCalculation();
             updateDisplay();
             return;
