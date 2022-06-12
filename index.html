@@ -4,6 +4,7 @@
 <head>
     <title>Web Calculator</title>
     <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -11,6 +12,22 @@
     <div class="flex-container-column card">
         <div class="display">
             <h1 id="displayNumber">0</h1>
+            <!-- <div class="riwayat-container">
+                <div class="riwayat-box">
+                    <div class="header-riwayat">
+                        <div class="header-riwayat-txt">History</div>
+                        <div class="close-riwayat">
+                            <div class="btn-trash">X</div>
+                        </div>
+                    </div>
+                    <div class="body-riwayat">Belum Ada Riwayat</div>
+                    <div class="footer-riwayat">
+                        <div class="btn-trash">
+                            <div class="far fa-trash-alt"></div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
         </div>
         <div class="flex-container-row">
             <div class="button clear">AC</div>
@@ -43,14 +60,14 @@
         </div>
     </div>
     <div class="history card">
-        <h2>Riwayat Perhitungan</h2>
+        <h2>Calculation History</h2>
         <table>
             <thead>
                 <tr>
-                    <th>Angka Pertama</th>
-                    <th>Operator</th>
-                    <th>Angka Kedua</th>
-                    <th>Hasil</th>
+                    <th>firs Number</th>
+                    <th>Operation</th>
+                    <th>Second Number</th>
+                    <th>Result</th>
                 </tr>
             </thead>
             <tbody id="historyList"></tbody>
@@ -59,6 +76,7 @@
 
     <script src="assets/history.js"></script>
     <script src="assets/calculation.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 </body>
 
 </html>
