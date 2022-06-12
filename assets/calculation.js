@@ -73,6 +73,11 @@ function performCalculation() {
     renderHistory();
 }
 
+//calculate persentage
+function persentage() {
+    calculator.displayNumber = calculator.displayNumber / 100;
+}
+
 const buttons = document.querySelectorAll(".button");
 for (let button of buttons) {
     button.addEventListener('click', function (event) {
