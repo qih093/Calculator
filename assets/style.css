@@ -46,7 +46,7 @@ body {
 .equals,
 .devide,
 .multiply {
-    background: orange;
+    background: #14c6dd;
 }
 
 .card {
@@ -80,7 +80,7 @@ td {
 }
 
 th {
-    background-color: orange;
+    background-color: #14c6dd;
     color: white;
 }
 
