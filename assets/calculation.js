@@ -60,6 +60,9 @@ function performCalculation() {
         result = parseInt(calculator.firstNumber) * parseInt(calculator.displayNumber);
     } else if (calculator.operator === "/") {
         result = parseInt(calculator.firstNumber) / parseInt(calculator.displayNumber);
+    }else{
+        alert("Operator tidak diketahui");
+        return;
     }
     // objek yang akan dikirimkan sebagai argumen fungsi putHistory()
     const history = {
@@ -114,8 +117,11 @@ for (let button of buttons) {
         }
 
         if (target.classList.contains('equals')) {
+            if(calculator.operator === "%"){
+                persentage();
+                updateDisplay();
+            }
             performCalculation();
-            persentage();
             updateDisplay();
             return;
         }
